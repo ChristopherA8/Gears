@@ -8,7 +8,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Enabled/Disable Tweak</string>
+			<string>Enable/Disable Tweak</string>
 		</dict>
 		<dict>
 			<key>cell</key>
