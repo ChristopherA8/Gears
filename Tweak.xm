@@ -9,6 +9,10 @@
 //  https://www.youtube.com/watch?v=V_92zSuXd40   //
 // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
 
+BOOL enabled;
+
+%group Gears
+
 %subclass GearsView : SBIconImageView
 
 - (UIImage *)squareContentsImage {
@@ -114,3 +118,13 @@
 }
 
 %end
+
+%end
+
+%ctor {
+	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.chr1s.gearsprefs"];
+	[preferences registerBool:&enabled default:YES forKey:@"enabled"];
+	if (enabled) {
+		%init(Gears);
+	}
+}

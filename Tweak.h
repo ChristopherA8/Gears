@@ -1,5 +1,6 @@
 #include <Foundation/Foundation.h>
 #include <UIKit/UIkit.h>
+#include <Cephei/HBPreferences.h>
 
 /* Credits to Skitty's LiveSafari */
 
