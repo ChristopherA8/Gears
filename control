@@ -1,0 +1,9 @@
+Package: com.chr1s.gears
+Name: Gears
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Animate Settings icon!
+Maintainer: Chr1s
+Author: Chr1s
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
