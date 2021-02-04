@@ -45,6 +45,36 @@
 			<key>label</key>
 			<string>Respring</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Icon Speed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>cellClass</key>
+			<string>HBDiscreteSliderTableCell</string>
+			<key>default</key>
+			<real>6</real>
+			<key>defaults</key>
+			<string>com.chr1s.gearsprefs</string>
+			<key>key</key>
+			<string>speed</string>
+			<key>label</key>
+			<string>Icon Speed</string>
+			<key>max</key>
+			<real>10</real>
+			<key>min</key>
+			<real>1</real>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Respring for changes to take effect!</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>Gears</string>

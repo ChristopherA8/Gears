@@ -19,6 +19,8 @@ RED=\033[0;31m
 CYAN=\033[0;36m
 NC=\033[0m
 BOLD=\033[1m
-echo -e "${BOLD}Finished Compiling:${NC} ${RED}$(TWEAK_NAME)${NC} ~ ${CYAN}Chr1s${NC}"
+
 SUBPROJECTS += gearsprefs
 include $(THEOS_MAKE_PATH)/aggregate.mk
+all::
+	@echo -e "${BOLD}Finished Compiling:${NC} ${RED}$(TWEAK_NAME)${NC} ~ ${CYAN}Chr1s${NC}"

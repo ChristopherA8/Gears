@@ -10,21 +10,25 @@
 // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
 
 BOOL enabled;
+NSInteger speed;
+NSArray *values;
 
 %group Gears
 
 %subclass GearsView : SBIconImageView
 
 - (UIImage *)squareContentsImage {
-	return nil;
+	return [UIImage imageWithContentsOfFile:@"/Library/Gears/0.gif"];
 }
 
 - (UIImage *)contentsImage {
-	return nil;
+	return [UIImage imageWithContentsOfFile:@"/Library/Gears/0.gif"];
 }
 
 - (void)setIcon:(id)arg1 location:(long long)arg2 animated:(BOOL)arg3 {
-	UIImageView *image = [[UIImageView alloc] initWithFrame:self.bounds];
+	if ([[self subviews] count] > 1) return;
+
+	image = [[UIImageView alloc] initWithFrame:self.bounds];
 	image.animationImages = [NSArray arrayWithObjects:
 	[UIImage imageNamed:@"/Library/Gears/0.gif"],
 	[UIImage imageNamed:@"/Library/Gears/1.gif"],
@@ -99,7 +103,12 @@ BOOL enabled;
 	[UIImage imageNamed:@"/Library/Gears/70.gif"],
 	[UIImage imageNamed:@"/Library/Gears/71.gif"],
 	nil];
-	image.animationDuration = 2.0f;
+
+	NSLog(@"Chr1s: Speed = %ld", speed);
+	NSLog(@"Chr1s: Subviews.length = %lu", [[self subviews] count]);
+	values = @[@(5.5), @(5.0), @(4.5), @(4.0), @(3.5), @(3.0), @(2.5), @(2.0), @(1.5), @(1.0)];
+
+	image.animationDuration = [values[speed - 1] doubleValue];
 	image.animationRepeatCount = 0;
 	[image startAnimating];
 	[self insertSubview:image atIndex:0];
@@ -124,6 +133,7 @@ BOOL enabled;
 %ctor {
 	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.chr1s.gearsprefs"];
 	[preferences registerBool:&enabled default:YES forKey:@"enabled"];
+	[preferences registerInteger:&speed default:6 forKey:@"speed"];
 	if (enabled) {
 		%init(Gears);
 	}

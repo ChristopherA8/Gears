@@ -4,6 +4,8 @@
 
 /* Credits to Skitty's LiveSafari */
 
+UIImageView *image;
+
 @interface SBIcon : NSObject
 - (id)leafIdentifier;
 @end
