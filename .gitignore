@@ -2,3 +2,7 @@
 /layout
 Tweak.xm.old
 .DS_Store
+/packages
+
+UIView+SmoothCorners.h
+UIView+SmoothCorners.m

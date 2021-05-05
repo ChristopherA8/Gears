@@ -5,6 +5,7 @@
 /* Credits to Skitty's LiveSafari */
 
 UIImageView *image;
+CGFloat cornerRadius;
 
 @interface SBIcon : NSObject
 - (id)leafIdentifier;

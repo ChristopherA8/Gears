@@ -7,4 +7,9 @@
 #import <Cephei/HBRespringController.h>
 
 @interface PRFRootListController : PSListController
+@property (nonatomic, retain) UIBarButtonItem *respringButton;
+@property (nonatomic, retain) UILabel *titleLabel;
+-(void)discord;
+-(void)paypal;
+-(void)sourceCode;
 @end

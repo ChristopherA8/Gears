@@ -26,6 +26,7 @@ NSArray *values;
 }
 
 - (void)setIcon:(id)arg1 location:(long long)arg2 animated:(BOOL)arg3 {
+	self.clipsToBounds = YES;
 	if ([[self subviews] count] > 1) return;
 
 	image = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -108,6 +109,11 @@ NSArray *values;
 	NSLog(@"Chr1s: Subviews.length = %lu", [[self subviews] count]);
 	values = @[@(5.5), @(5.0), @(4.5), @(4.0), @(3.5), @(3.0), @(2.5), @(2.0), @(1.5), @(1.0)];
 
+	self.layer.cornerRadius = cornerRadius;
+    if (@available(iOS 13.0, *)) {
+        self.layer.cornerCurve = kCACornerCurveContinuous;
+    }
+
 	image.animationDuration = [values[speed - 1] doubleValue];
 	image.animationRepeatCount = 0;
 	[image startAnimating];
@@ -134,6 +140,8 @@ NSArray *values;
 	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.chr1s.gearsprefs"];
 	[preferences registerBool:&enabled default:YES forKey:@"enabled"];
 	[preferences registerInteger:&speed default:6 forKey:@"speed"];
+	[preferences registerFloat:&cornerRadius default:13.5 forKey:@"cornerRadius"];
+
 	if (enabled) {
 		%init(Gears);
 	}
