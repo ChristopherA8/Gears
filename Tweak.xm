@@ -105,8 +105,8 @@ NSArray *values;
 	[UIImage imageNamed:@"/Library/Gears/71.gif"],
 	nil];
 
-	NSLog(@"Chr1s: Speed = %ld", speed);
-	NSLog(@"Chr1s: Subviews.length = %lu", [[self subviews] count]);
+	// NSLog(@"Chr1s: Speed = %ld", speed);
+	// NSLog(@"Chr1s: Subviews.length = %lu", [[self subviews] count]);
 	values = @[@(5.5), @(5.0), @(4.5), @(4.0), @(3.5), @(3.0), @(2.5), @(2.0), @(1.5), @(1.0)];
 
 	self.layer.cornerRadius = cornerRadius;

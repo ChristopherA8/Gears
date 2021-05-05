@@ -9,6 +9,7 @@
 @interface PRFRootListController : PSListController
 @property (nonatomic, retain) UIBarButtonItem *respringButton;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIView *headerView;
 -(void)discord;
 -(void)paypal;
 -(void)sourceCode;
